@@ -1,49 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<StackPane id="stackpane1" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="panofxml.FXMLacceuilController">
+<StackPane id="stackpane1" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="panofxml.FXMLacceuilController">
     <children>
         <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="582.0" minWidth="944.0" stylesheets="@Login.css">
             <top>
-                <VBox>
+                <VBox spacing="10.0">
                     <children>
                         <HBox fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="TOP_LEFT">
                             <children>
-                                <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@logo-aes.png" />
-                                    </image>
-                                </ImageView>
-                                <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
-                                <StackPane alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="82.0">
-                                    <children>
-                                        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3e4d61" height="25.0" stroke="#ebebeb" strokeType="INSIDE" width="93.0" StackPane.alignment="CENTER_RIGHT">
-                                            <StackPane.margin>
-                                                <Insets />
-                                            </StackPane.margin>
-                                        </Rectangle>
-                                        <Label prefHeight="10.0" prefWidth="58.0" text=" PanoFX" textAlignment="JUSTIFY" textFill="#f9fbff" textOverrun="CLIP" wrapText="true" StackPane.alignment="CENTER">
-                                            <font>
-                                                <Font size="15.0" />
-                                            </font>
-                                        </Label>
-                                        <StackPane prefHeight="150.0" prefWidth="200.0" />
-                                    </children>
-                                    <HBox.margin>
-                                        <Insets top="12.0" />
-                                    </HBox.margin>
-                                </StackPane>
+                        <Label id="text-InfoEnteteGros" text="Carnet d'adresses" />
                             </children>
                         </HBox>
                         <StackPane id="arrondi" prefHeight="36.0" prefWidth="945.0">
@@ -51,54 +30,28 @@
                                 <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" StackPane.alignment="BOTTOM_CENTER" />
                                 <HBox id="bande_bleue" alignment="CENTER" fillHeight="false" prefHeight="0.0" prefWidth="964.0" StackPane.alignment="BOTTOM_CENTER">
                                     <children>
-                                        <Label id="username" text="username" HBox.hgrow="ALWAYS">
-                                            <HBox.margin>
-                                                <Insets left="10.0" />
-                                            </HBox.margin>
-                                        </Label>
                                         <Region prefHeight="36.0" prefWidth="98.0" HBox.hgrow="ALWAYS" />
-                              <HBox id="bouton" alignment="CENTER" prefHeight="40.0" prefWidth="103.0">
+                              <HBox id="bouton" alignment="CENTER" prefHeight="40.0" prefWidth="136.0">
                                  <children>
-                                    <ImageView disable="true" fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@list.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label id="text-InfoPercent" text="Customer List" />
+                                    <Label id="text-InfoPercent" prefHeight="15.0" prefWidth="116.0" text="AJouter Contacts" />
                                  </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </HBox>
                                         <Region id="separator" maxWidth="1.0" minWidth="1.0" prefHeight="54.0" prefWidth="1.0" HBox.hgrow="ALWAYS" />
-                              <HBox id="bouton" alignment="CENTER" minHeight="40.0" prefWidth="103.0">
+                              <HBox id="bouton" alignment="CENTER" minHeight="40.0" prefHeight="40.0" prefWidth="123.0">
                                  <children>
-                                              <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
-                                                  <HBox.margin>
-                                                      <Insets />
-                                                  </HBox.margin>
-                                                  <image>
-                                                      <Image url="@refresh.png" />
-                                                  </image>
-                                              </ImageView>
-                                    <Label id="text-InfoPercent" text="Refresh" />
+                                    <Label id="text-InfoPercent" prefHeight="15.0" prefWidth="114.0" text="Créer Opérateur" />
                                  </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </HBox>
                                         <Region id="separator" maxWidth="1.0" minWidth="1.0" prefHeight="54.0" prefWidth="1.0" HBox.hgrow="ALWAYS" />
-                              <HBox id="bouton" alignment="CENTER" minHeight="40.0" prefWidth="103.0">
+                              <HBox id="bouton" alignment="CENTER" minHeight="40.0" prefHeight="40.0" prefWidth="144.0">
                                  <children>
-                                              <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@user.png" />
-                                                  </image>
-                                                  <HBox.margin>
-                                                      <Insets />
-                                                  </HBox.margin>
-                                              </ImageView>
-                                    <Label id="text-InfoPercent" text="My account" />
+                                    <Label id="text-InfoPercent" text="Mes Contacts" />
                                  </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -107,15 +60,7 @@
                                         <Region id="separator" maxWidth="1.0" minWidth="1.0" prefHeight="54.0" prefWidth="1.0" HBox.hgrow="ALWAYS" />
                               <HBox id="bouton" alignment="CENTER" prefHeight="40.0" prefWidth="103.0">
                                  <children>
-                                              <ImageView disable="true" fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                                  <HBox.margin>
-                                                      <Insets />
-                                                  </HBox.margin>
-                                                  <image>
-                                                      <Image url="@logout.png" />
-                                                  </image>
-                                              </ImageView>
-                                    <Label id="text-InfoPercent" text="Logout" />
+                                    <Label id="text-InfoPercent" text="Fermer" />
                                  </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -131,22 +76,22 @@
                                 <Insets left="10.0" right="10.0" />
                             </VBox.margin>
                         </StackPane>
-                        <BorderPane prefHeight="0.0" prefWidth="964.0">
+                        <BorderPane maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="964.0">
                             <center>
-                                <Label id="text-InfoEnteteGros" text="Search Criteria" BorderPane.alignment="CENTER" />
+                                <Label id="text-InfoEnteteBlue" text="Ajouter personne" BorderPane.alignment="CENTER" />
                             </center>
                         </BorderPane>
                     </children>
                 </VBox>
             </top>
             <center>
-                <VBox id="arrondi1" spacing="5.0">
+                <VBox id="arrondi1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
                     <children>
-                        <VBox id="arrondi" fx:id="arrondi" prefHeight="212.0" prefWidth="964.0" spacing="5.0" BorderPane.alignment="CENTER">
+                        <VBox id="arrondi" fx:id="arrondi" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="454.0" prefWidth="964.0" spacing="5.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
                             <children>
                                 <HBox prefHeight="39.0" prefWidth="944.0">
                                     <children>
-                                        <Label id="text-InfoEntetePetitCopy" prefHeight="25.0" prefWidth="102.0" text="Location" textFill="WHITE">
+                                        <Label id="text-InfoEntetePetitCopy" prefHeight="25.0" prefWidth="102.0" text="Personne" textFill="WHITE">
                                             <HBox.margin>
                                                 <Insets left="5.0" />
                                             </HBox.margin>
@@ -156,19 +101,16 @@
                                         <Insets left="10.0" top="5.0" />
                                     </VBox.margin>
                                 </HBox>
-                                <HBox prefHeight="41.0" prefWidth="944.0">
+                                <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="944.0" spacing="20.0">
                                     <children>
-                                        <Label id="text-normal" text="Region">
+                                        <Label id="text-normal" text="Nom(s)">
                                             <HBox.margin>
                                                 <Insets left="5.0" />
                                             </HBox.margin>
                                         </Label>
-                                        <Region prefHeight="100.0" prefWidth="49.0" />
-                                        <ChoiceBox prefHeight="29.0" prefWidth="209.0" />
-                                        <Region prefHeight="100.0" prefWidth="50.0" />
-                                        <Label id="text-normal" text="Site" />
-                                        <Region prefHeight="83.0" prefWidth="48.0" />
-                                        <ChoiceBox prefWidth="150.0" />
+                              <TextField />
+                                        <Label id="text-normal" text="Prénom(s)" />
+                              <TextField />
                                     </children>
                            <VBox.margin>
                               <Insets left="10.0" />
@@ -176,7 +118,7 @@
                                 </HBox>
                                 <HBox prefHeight="34.0" prefWidth="944.0">
                                     <children>
-                                        <Label id="text-InfoEntetePetitCopy" text="Level">
+                                        <Label id="text-InfoEntetePetitCopy" text="Numéro(s) de téléphone">
                                             <HBox.margin>
                                                 <Insets left="5.0" />
                                             </HBox.margin>
@@ -186,51 +128,32 @@
                               <Insets left="10.0" />
                            </VBox.margin>
                                 </HBox>
-                                <HBox prefHeight="33.0" prefWidth="944.0">
-                                    <children>
-                                        <CheckBox mnemonicParsing="false" text="Low1">
-                                            <HBox.margin>
-                                                <Insets left="5.0" />
-                                            </HBox.margin>
-                                        </CheckBox>
-                                        <Region prefHeight="100.0" prefWidth="104.0" />
-                                        <CheckBox mnemonicParsing="false" text="Low2" />
-                                        <Region prefHeight="100.0" prefWidth="113.0" />
-                                        <CheckBox mnemonicParsing="false" text="Medium" />
-                                        <Region prefHeight="100.0" prefWidth="103.0" />
-                                        <CheckBox mnemonicParsing="false" text="Hight" />
-                                        <Region prefHeight="100.0" prefWidth="109.0" />
-                                        <CheckBox mnemonicParsing="false" text="Very Hight" />
-                                    </children>
+                        <VBox>
                            <VBox.margin>
                               <Insets left="10.0" />
                            </VBox.margin>
-                                </HBox>
-                                <HBox prefHeight="31.0" prefWidth="944.0">
-                                    <children>
-                                        <RadioButton mnemonicParsing="false" text="heigth">
-                                            <HBox.margin>
-                                                <Insets left="5.0" />
-                                            </HBox.margin>
-                                        </RadioButton>
-                                        <Region prefHeight="100.0" prefWidth="23.0" />
-                                        <TextField prefHeight="25.0" prefWidth="113.0" />
-                                        <Region prefHeight="31.0" prefWidth="9.0" />
-                                        <Label id="text-normal" text="meter(s)" />
-                                        <Region prefHeight="25.0" prefWidth="101.0" />
-                                        <RadioButton mnemonicParsing="false" text="Volume" />
-                                        <Region prefHeight="100.0" prefWidth="44.0" />
-                                        <TextField prefHeight="25.0" prefWidth="113.0" />
-                                        <Region prefHeight="31.0" prefWidth="7.0" />
-                                        <Label id="text-normal" text="liter(s)" />
-                                    </children>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                                </HBox>
+                           <children>
+                                      <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="954.0" spacing="20.0">
+                                 <children>
+                                    <Label text="Numéro" />
+                                    <TextField />
+                                    <Label text="Opérateur" />
+                                    <ComboBox prefWidth="150.0" />
+                                    <Button mnemonicParsing="false" text="+" />
+                                    <Button id="boutonred" layoutX="548.0" layoutY="10.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="33.0" text="-" />
+                                 </children>
+                                      </HBox>
+                              <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="94.0" prefWidth="953.0" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn prefWidth="494.99998474121094" text="Numéro" />
+                                  <TableColumn prefWidth="458.0" text="Opérateur" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
                                 <HBox prefHeight="37.0" prefWidth="944.0">
                                     <children>
-                                        <Label id="text-InfoEntetePetitCopy" text="Communication">
+                                        <Label id="text-InfoEntetePetitCopy" text="Adresse(s)">
                                             <HBox.margin>
                                                 <Insets left="5.0" />
                                             </HBox.margin>
@@ -240,27 +163,23 @@
                               <Insets left="10.0" />
                            </VBox.margin>
                                 </HBox>
-                                <HBox prefHeight="82.0" prefWidth="964.0">
-                                    <children>
-                                        <CheckBox mnemonicParsing="false" text="Communication default">
-                                            <opaqueInsets>
-                                                <Insets />
-                                            </opaqueInsets>
-                                            <HBox.margin>
-                                                <Insets left="5.0" />
-                                            </HBox.margin>
-                                        </CheckBox>
-                                        <Region maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="33.0" prefWidth="283.0" HBox.hgrow="ALWAYS" />
-                                        <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="122.0" text="Search">
-                                            <HBox.margin>
-                                                <Insets bottom="10.0" />
-                                            </HBox.margin>
-                                        </Button>
-                                    </children>
+                                <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="964.0" spacing="20.0">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
+                           <children>
+                              <Label text="Adresse" />
+                              <TextField prefHeight="26.0" prefWidth="444.0" />
+                              <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" text="+" />
+                              <Button id="boutonred" mnemonicParsing="false" prefHeight="18.0" prefWidth="33.0" text="-" />
+                           </children>
                                 </HBox>
+                        <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="154.0" prefWidth="943.0" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn maxWidth="1.7976931348623157E308" prefWidth="963.0000114440918" text="Adresse" />
+                          </columns>
+                        </TableView>
+                        <Button mnemonicParsing="false" text="Enregistrer" />
                             </children>
                             <BorderPane.margin>
                                 <Insets left="10.0" right="10.0" />
@@ -268,148 +187,6 @@
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
-                        </VBox>
-                        <BorderPane prefHeight="33.0" prefWidth="964.0">
-                            <center>
-                                <Label id="text-InfoEnteteGros" text="Cuve List" BorderPane.alignment="CENTER" />
-                            </center>
-                        </BorderPane>
-                        <VBox id="arrondi" prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
-                            <children>
-                                <HBox prefHeight="40.0" prefWidth="964.0">
-                                    <opaqueInsets>
-                                        <Insets />
-                                    </opaqueInsets>
-                                    <VBox.margin>
-                                        <Insets left="10.0" right="13.0" top="30.0" />
-                                    </VBox.margin>
-                                    <children>
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CODE" />
-                                        <Region maxWidth="65.0" minWidth="45.0" prefHeight="45.0" prefWidth="65.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="SITE" />
-                                        <Region maxWidth="72.0" minHeight="45.0" prefHeight="45.0" prefWidth="52.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="DEVICE" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefHeight="45.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE1" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefHeight="0.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE2" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE3" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE4" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE5" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE6" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE7" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE8" />
-                                        <Region maxWidth="40.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE9" />
-                                        <Region maxWidth="40.0" minHeight="0.0" minWidth="18.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="CUVE10" />
-                                        <Region minWidth="18.0" prefHeight="40.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-InfoEntetePetittitrecuves" text="LEVEL" />
-                                    </children>
-                                </HBox>
-                                <HBox id="arrondistations" onMouseClicked="#handleChoixListe" prefHeight="44.0" prefWidth="944.0">
-                                    <VBox.margin>
-                                        <Insets left="10.0" right="10.0" />
-                                    </VBox.margin>
-                                    <children>
-                                        <Label id="text-normal" text="CE301">
-                                            <HBox.margin>
-                                                <Insets left="3.0" top="10.0" />
-                                            </HBox.margin>
-                                        </Label>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Label id="text-normal" text="Melen">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Label>
-                                        <Region minWidth="0.0" prefHeight="0.0" HBox.hgrow="ALWAYS" />
-                                        <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@alert.png" />
-                                            </image>
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </ImageView>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="90%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="30%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="45%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefHeight="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="66%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="35%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="10%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="16%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="71%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="41%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="52%">
-                                            <HBox.margin>
-                                                <Insets top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                        <Region minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                        <Hyperlink id="text-InfoPercent " text="60%">
-                                            <HBox.margin>
-                                                <Insets right="10.0" top="10.0" />
-                                            </HBox.margin>
-                                        </Hyperlink>
-                                    </children>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                </HBox>
-                            </children>
                         </VBox>
                     </children>
                     <BorderPane.margin>
@@ -420,7 +197,7 @@
             <bottom>
                 <HBox prefHeight="21.0" prefWidth="984.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Label id="text-InfoEntete" text="Copyrigth AMLA GROUP 2014">
+                        <Label id="text-InfoEntete" text="Copyrigth IFI P20 2016">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
