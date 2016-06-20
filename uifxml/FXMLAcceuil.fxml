@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane id="stackpane1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" prefWidth="1200.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLControllerMain">
+    <children>
+        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="582.0" minWidth="944.0" stylesheets="@Login.css">
+            <top>
+                <VBox spacing="10.0">
+                    <children>
+                        <HBox fillHeight="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" prefHeight="40.0" BorderPane.alignment="TOP_LEFT" VBox.vgrow="NEVER">
+                            <children>
+                        <Label id="text-InfoEnteteGros" text="Carnet d'adresses" />
+                            </children>
+                        </HBox>
+                          <HBox id="bande_bleue" alignment="CENTER" fillHeight="false" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" VBox.vgrow="NEVER">
+                              <children>
+                                  <Region prefHeight="36.0" prefWidth="98.0" HBox.hgrow="ALWAYS" />
+                        <HBox id="bouton" fx:id="buttonAjoutContact" alignment="CENTER" prefHeight="40.0" prefWidth="136.0">
+                           <children>
+                              <Label id="text-InfoPercent" prefHeight="15.0" prefWidth="116.0" text="AJouter Contacts" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </HBox>
+                                  <Region id="separator" maxWidth="1.0" minWidth="1.0" prefHeight="54.0" prefWidth="1.0" HBox.hgrow="ALWAYS" />
+                        <HBox id="bouton" fx:id="buttonCreerOperateur" alignment="CENTER" minHeight="40.0" prefHeight="40.0" prefWidth="123.0">
+                           <children>
+                              <Label id="text-InfoPercent" prefHeight="15.0" prefWidth="114.0" text="Créer Opérateur" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </HBox>
+                                  <Region id="separator" maxWidth="1.0" minWidth="1.0" prefHeight="54.0" prefWidth="1.0" HBox.hgrow="ALWAYS" />
+                        <HBox id="bouton" fx:id="buttonMesContact" alignment="CENTER" minHeight="40.0" prefHeight="40.0" prefWidth="144.0">
+                           <children>
+                              <Label id="text-InfoPercent" text="Mes Contacts" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </HBox>
+                                  <Region id="separator" maxWidth="1.0" minWidth="1.0" prefHeight="54.0" prefWidth="1.0" HBox.hgrow="ALWAYS" />
+                        <HBox id="bouton" fx:id="boutonFermer" alignment="CENTER" prefHeight="40.0" prefWidth="103.0">
+                           <children>
+                              <Label id="text-InfoPercent" text="Fermer" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </HBox>
+                              </children>
+                          </HBox>
+                    </children>
+                </VBox>
+            </top>
+            <center>
+            <StackPane fx:id="panneauPrincipal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER" />
+            </center>
+        </BorderPane>
+    </children>
+</StackPane>
