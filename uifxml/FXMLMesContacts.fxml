@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import intfield.IntField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane id="stackpane1" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLControllerMain">
+<StackPane id="stackpane1" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLControllerChercherPersonne">
     <children>
         <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="582.0" minWidth="944.0" stylesheets="@Login.css">
             <top>
@@ -37,43 +39,52 @@
                                                 <Insets left="5.0" />
                                             </HBox.margin>
                                         </Label>
-                              <TextField prefHeight="26.0" prefWidth="229.0" promptText="Tapez le nom de la personne" />
+                              <TextField fx:id="textFieldNom" onKeyReleased="#handleRechercherPersonne" prefHeight="26.0" prefWidth="229.0" promptText="Tapez le nom de la personne" />
+                              <Button mnemonicParsing="false" onAction="#handleAfficherToutActionButton" text="Afficher tout" />
                                     </children>
                            <VBox.margin>
                               <Insets left="10.0" />
                            </VBox.margin>
                                 </HBox>
-                                <HBox prefHeight="34.0" prefWidth="944.0">
+                                <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="944.0" spacing="300.0">
                                     <children>
                                         <Label id="text-InfoEntetePetitCopy" text="Indentité Personne">
                                             <HBox.margin>
                                                 <Insets left="5.0" />
                                             </HBox.margin>
                                         </Label>
+                              <Label id="messageerror" fx:id="message" />
                                     </children>
                            <VBox.margin>
                               <Insets left="10.0" />
                            </VBox.margin>
                                 </HBox>
-                        <TableView prefHeight="100.0" prefWidth="907.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="tableInfoPersonne" onMouseClicked="#handleSelectPersonne" prefHeight="191.0" prefWidth="983.0" VBox.vgrow="ALWAYS">
                           <columns>
-                            <TableColumn prefWidth="162.0" text="Identifiant" />
                               <TableColumn prefWidth="439.99998474121094" text="Nom(s)" />
-                              <TableColumn prefWidth="290.0" text="Prénom(s)" />
+                              <TableColumn prefWidth="522.0" text="Prénom(s)" />
                           </columns>
                         </TableView>
-                        <HBox layoutX="20.0" layoutY="56.0" prefHeight="34.0" prefWidth="944.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="333.0" prefHeight="45.0" prefWidth="964.0" spacing="20.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <children>
+                              <Button id="boutonred" mnemonicParsing="false" onAction="#handleSupprimerPersonneActionButton" prefHeight="18.0" prefWidth="33.0" text="-" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="56.0" prefHeight="34.0" prefWidth="944.0" spacing="300.0">
                            <children>
                               <Label id="text-InfoEntetePetitCopy" text="Numéro(s)">
                                  <HBox.margin>
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Label>
+                              <Label id="messageerror" fx:id="messageNumero" />
                            </children>
                         </HBox>
-                        <TableView prefHeight="128.0" prefWidth="927.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="tableViewNumero" prefHeight="128.0" prefWidth="927.0" VBox.vgrow="ALWAYS">
                            <columns>
-                              <TableColumn prefWidth="244.0" text="Identifiant" />
                               <TableColumn prefWidth="350.0" text="Numéro" />
                               <TableColumn prefWidth="369.0" text="Opérateur" />
                            </columns>
@@ -83,24 +94,26 @@
                               <Insets left="10.0" />
                            </padding>
                            <children>
-                              <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" text="+" />
-                              <Button id="boutonred" mnemonicParsing="false" prefHeight="18.0" prefWidth="33.0" text="-" />
+                              <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAddNumeroActionButton" text="+" />
+                              <Button id="boutonred" mnemonicParsing="false" onAction="#handleRemoveNumeroActionButton" prefHeight="18.0" prefWidth="33.0" text="-" />
+                              <IntField fx:id="numeroIntField" maxValue="999999999" promptText="Nouveau numéro" />
+                              <ComboBox fx:id="comboOperateur" onMouseClicked="#handleLoadOperateur" prefWidth="150.0" />
                            </children>
                                 </HBox>
-                        <HBox layoutX="10.0" layoutY="355.0" prefHeight="34.0" prefWidth="944.0">
+                        <HBox id="messageerror" layoutX="10.0" layoutY="355.0" prefHeight="34.0" prefWidth="944.0" spacing="300.0">
                            <children>
                               <Label id="text-InfoEntetePetitCopy" text="Adresse(s)">
                                  <HBox.margin>
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Label>
+                              <Label id="messageerror" fx:id="messageadresse" />
+                              <Label fx:id="messageAdresse" />
                            </children>
                         </HBox>
-                        <TableView layoutX="10.0" layoutY="394.0" prefHeight="128.0" prefWidth="927.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="tableViewAdresse" layoutX="10.0" layoutY="394.0" prefHeight="128.0" prefWidth="927.0" VBox.vgrow="ALWAYS">
                            <columns>
-                              <TableColumn prefWidth="266.0" text="Identifiant" />
                               <TableColumn prefWidth="712.0" text="Adresse" />
-                              <TableColumn prefWidth="464.0" text="Opérateur" />
                            </columns>
                         </TableView>
                         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="362.0" prefHeight="45.0" prefWidth="964.0" spacing="20.0">
@@ -108,8 +121,9 @@
                               <Insets left="10.0" />
                            </padding>
                            <children>
-                              <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" text="+" />
-                              <Button id="boutonred" mnemonicParsing="false" prefHeight="18.0" prefWidth="33.0" text="-" />
+                              <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAddAdresseActionButton" text="+" />
+                              <Button id="boutonred" mnemonicParsing="false" onAction="#handleRemoveAdresseActionButton" prefHeight="18.0" prefWidth="33.0" text="-" />
+                              <TextField fx:id="textFieldAdresse" promptText="Nouvelle Adresse" />
                            </children>
                         </HBox>
                             </children>

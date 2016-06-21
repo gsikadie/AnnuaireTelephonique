@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import intfield.IntField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane id="stackpane1" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLControllerMain">
+<StackPane id="stackpane1" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLControllerCreatePerson">
     <children>
         <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="582.0" minWidth="944.0" stylesheets="@Login.css">
             <top>
@@ -50,9 +51,10 @@
                                                 <Insets left="5.0" />
                                             </HBox.margin>
                                         </Label>
-                              <TextField />
+                              <TextField fx:id="textFieldNom" />
                                         <Label id="text-normal" text="Prénom(s)" />
-                              <TextField />
+                              <TextField fx:id="textFieldPrenom" />
+                              <Label id="messageerror" fx:id="message" />
                                     </children>
                            <VBox.margin>
                               <Insets left="10.0" />
@@ -78,14 +80,14 @@
                                       <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="954.0" spacing="20.0">
                                  <children>
                                     <Label text="Numéro" />
-                                    <TextField />
+                                    <IntField fx:id="textFieldNumero" maxValue="999999999" promptText="number" />
                                     <Label text="Opérateur" />
-                                    <ComboBox prefWidth="150.0" />
-                                    <Button mnemonicParsing="false" text="+" />
-                                    <Button id="boutonred" layoutX="548.0" layoutY="10.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="33.0" text="-" />
+                                    <ComboBox fx:id="comboOperateur" onMouseClicked="#handleLoadOperateur" prefWidth="150.0" promptText="Mobifone" />
+                                    <Button mnemonicParsing="false" onAction="#handleAddNumeroActionButton" text="+" />
+                                    <Button id="boutonred" layoutX="548.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleRemoveNumeroActionButton" prefHeight="18.0" prefWidth="33.0" text="-" />
                                  </children>
                                       </HBox>
-                              <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="248.0" prefWidth="963.0" VBox.vgrow="ALWAYS">
+                              <TableView fx:id="tableViewNumero" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="248.0" prefWidth="963.0" VBox.vgrow="ALWAYS">
                                 <columns>
                                   <TableColumn prefWidth="494.99998474121094" text="Numéro" />
                                   <TableColumn prefWidth="458.0" text="Opérateur" />
@@ -111,17 +113,18 @@
                            </padding>
                            <children>
                               <Label text="Adresse" />
-                              <TextField prefHeight="26.0" prefWidth="444.0" />
-                              <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" text="+" />
-                              <Button id="boutonred" mnemonicParsing="false" prefHeight="18.0" prefWidth="33.0" text="-" />
+                              <TextField fx:id="textFieldAdresse" prefHeight="26.0" prefWidth="444.0" />
+                              <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAddAdresseActionButton" text="+" />
+                              <Button id="boutonred" mnemonicParsing="false" onAction="#handleRemoveAdresseActionButton" prefHeight="18.0" prefWidth="33.0" text="-" />
+                              <Label id="messageerror" fx:id="messageAdresse" />
                            </children>
                                 </HBox>
-                        <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="154.0" prefWidth="943.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="tableViewAdresse" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="154.0" prefWidth="943.0" VBox.vgrow="ALWAYS">
                           <columns>
                             <TableColumn maxWidth="1.7976931348623157E308" prefWidth="963.0000114440918" text="Adresse" />
                           </columns>
                         </TableView>
-                        <Button mnemonicParsing="false" text="Enregistrer" />
+                        <Button mnemonicParsing="false" onAction="#handleEnregistrerPersonneActionButton" text="Enregistrer" />
                             </children>
                             <BorderPane.margin>
                                 <Insets left="10.0" right="10.0" />

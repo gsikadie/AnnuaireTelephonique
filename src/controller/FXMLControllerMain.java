@@ -13,16 +13,22 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modele.Telephone;
 import application.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-
 
 /**
  *
@@ -30,42 +36,22 @@ import javafx.scene.text.Text;
  */
 public class FXMLControllerMain implements Initializable, ControlledScreen {
 
-    ScreensController myController;
-    DataBase dataBase;
-    @FXML
-    private Text actiontarget;
+	ScreensController myController;
+	DataBase dataBase;
+	
+	public FXMLControllerMain() {
+		// tableViewNumero.setItems(telephoneData);
+	}
 
+	
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		// TODO
+		}
+	
 
-    public FXMLControllerMain() {
-        actiontarget = new Text("Acces denied, please check");
-    }
-
-    @FXML
-    private void handleSubmitButtonAction(ActionEvent event) {
-
-        try {
-
-            this.dataBase = new DataBase(3306, "localhost", "panofxdb", "root", "root", "com.mysql.jdbc.Driver");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(FXMLControllerMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-           
-            
-        } catch (Exception ex) {
-            Logger.getLogger(FXMLControllerMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
-
-    public void setScreenParent(ScreensController screenPage) {
-        myController = screenPage;
-    }
+	public void setScreenParent(ScreensController screenPage) {
+		myController = screenPage;
+	}
 
 }
